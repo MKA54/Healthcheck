@@ -36,6 +36,13 @@ namespace Healthcheck.Controllers
             if (!UrlCheckPattern(_url))
             {
                 Console.WriteLine("URL parsing error.");
+                return;
+            }
+
+            if (_secondsInterval < 1)
+            {
+                Console.WriteLine("Interval < 1.");
+                return;
             }
 
             try
